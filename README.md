@@ -33,15 +33,24 @@ To enable an autonomous robot
 - Direct Linear Transform (8 point algorithm)
 - 5 point algorithm
 - Nonlinear and linear optimizations
+- Error Minimization of Nonliner and linear systems
+- Norm 2 Least Square Minimization
+- Norm-Forbenius LS Min
 - GBA (Generic Bundle Adjustment)
 - Feature Extractions
 - Pairwise Matching
 - RANSAC 
 - Differentiation
 - Gradient Descent
+
+  For these, in real time
+   
 - Structure from Motion
 - Sparse 3D reconstruction
 - Dense 3D reconstruction
+- Photogrammetry
+- Visual Odometry
+- Direct Odometry
 
 
 ## What's the vision?
