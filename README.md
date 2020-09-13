@@ -9,12 +9,12 @@ Open source library in C++ for autonomous driving platform and autonomous robots
 ## What does it do?
 To enable an autonomous robot 
 
-- 1) to see a scene 
-- 2) to track both static and dynmaic objects.
-- 3) to construct the world in real time.
-- 4) to estimate the norm vector of direction and velocity of a dynamic agent.
-- 5) to estimate the traffic signs and signals.
-- 6) robustly estimate with arcmin of 1 degree at few centimeters.
+1) to see a scene 
+2) to track both static and dynmaic objects.
+3) to construct the world in real time.
+4) to estimate the norm vector of direction and velocity of a dynamic agent.
+5) to estimate the traffic signs and signals.
+6) robustly estimate with arcmin of 1 degree at few centimeters.
 
 
 ## Why another platform?
