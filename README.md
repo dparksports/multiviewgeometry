@@ -30,11 +30,13 @@ To enable an autonomous robot
 - Namely,
 - Essential Matrix Estimation
 - Foundamental Matrix Estimation
-- Pairwise Matching
 - Direct Linear Transform (8 point algorithm)
+- 5 point algorithm
 - Nonlinear and linear optimizations
 - GBA (Generic Bundle Adjustment)
 - Feature Extractions
+- Pairwise Matching
+- RANSAC 
 - Differentiation
 - Gradient Descent
 - Structure from Motion
