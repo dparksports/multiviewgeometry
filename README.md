@@ -10,7 +10,7 @@ Open source library in C++ for autonomous driving platform and autonomous robots
 To enable an autonomous robot 
 
 1) to scan a scene
-2) to track both static and dynmaic objects.
+2) to track dynmaic objects in static background.
 3) to construct the world in real time.
 4) to estimate the norm vector of direction and velocity of a dynamic agent.
 5) to estimate the traffic signs and signals.
