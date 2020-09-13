@@ -1,10 +1,12 @@
 # Open Sourced Multi View Geometry Library
 Open source Multiview Geometry library in C++ for autonomous driving platform and autonomous robots 
 
-## What is it / What does it do?
+## What is it?
 
 - This library implements the traditional Computer Vision algorithms for machine vision.
 - Used in autonomous driving platform or autonomous robots including autonomous drones, rovers and submarines.
+
+## What does it do?
 
 - To enable an autonomous robot 
 -- 1) to see a scene 
