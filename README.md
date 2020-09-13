@@ -58,7 +58,7 @@ To enable an autonomous robot
 
 ## What's the vision?
 
-- To provide the baseline implmenation for a noble neural network architecture for reliable and safe autonomous robots including self-driving platform.
-- Working towards the creation of a noble neural network architure to support multi-modality.
+- To provide the baseline implmenation for a noble neural network architecture for reliable and safe autonomous robots including self-driving vehicles.
+- Working towards the creation of a noble neural network architure to support robust, efficient and safe multi-modality neural network.
 
 ## 
