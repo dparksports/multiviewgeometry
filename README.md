@@ -37,6 +37,8 @@ To enable an autonomous robot
 - Error Minimization of Nonliner and linear systems
 - Norm 2 Least Square Minimization
 - Norm-Forbenius LS Min
+- Jacobian Matrix
+- Hessian Matrix
 - GBA (Generic Bundle Adjustment)
 - Feature Extractions
 - Pairwise Matching
