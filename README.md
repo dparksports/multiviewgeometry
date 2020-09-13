@@ -1,5 +1,5 @@
-# Open Sourced Multi View Geometry Library
-Open source Multiview Geometry library in C++ for autonomous driving platform and autonomous robots 
+# Multi View Geometry Library for Autonomous Robots
+Open source library in C++ for autonomous driving platform and autonomous robots 
 
 ## What is it?
 
