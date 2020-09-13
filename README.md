@@ -20,7 +20,7 @@ To enable an autonomous robot
 
 ## Why another platform?
 
-- To support an independent implemenation, not depending on commercial libraries provided by NVIDA, Intel, AMD, and others.
+- To provide an independent implemenation for the public, without having the dependency on any commercial libraries.
 
 
 ## What's the implementation roadmap?
