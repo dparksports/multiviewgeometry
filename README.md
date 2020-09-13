@@ -11,8 +11,9 @@ To enable an autonomous robot
 
 1) to scan a scene
 2) to track dynmaic objects in static background.
-3) to construct the world in real time.
-4) to estimate the norm vector of direction and velocity of a dynamic agent.
+3) to register temporal point clouds
+4) to reconstrct the real world in real time.
+4) to estimate the norm vectors of direction and velocity of dynamic agents.
 5) to estimate the traffic signs and signals.
 6) robustly estimate with arcmin of 1 degree at few centimeters.
 
