@@ -54,6 +54,7 @@ To enable an autonomous robot
 - Photogrammetry
 - Visual Odometry
 - Direct Odometry
+- SLAM
 
 
 ## What's the vision?
