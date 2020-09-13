@@ -15,7 +15,7 @@ To enable an autonomous robot
 4) to reconstrct the real world in real time.
 4) to estimate the norm vectors of direction and velocity of dynamic agents.
 5) to estimate the traffic signs and signals.
-6) robustly estimate with arcmin of 1 degree at few centimeters.
+6) robustly estimate point clouds in arcmin of 1 degree at few centimeters.
 
 
 ## Why another platform?
