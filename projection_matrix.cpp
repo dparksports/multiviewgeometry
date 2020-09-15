@@ -137,9 +137,36 @@ void compute_camera_center(cv::Mat projectionMatrix) {
     std::cout << "cameraCenter:" << cameraCenter << endl;
 }
 
+void estimate_residual() {
+    cv::Mat cv3dpts, cv2dpts;
+    cv::eigen2cv(pts3d, cv3dpts);
+    cv::eigen2cv(pts2d, cv2dpts);
+
+    cv::Mat lastPt2D = cv2dpts.row(0);
+    cv::Mat lastPt3D = cv3dpts.row(0);
+
+    cv::Mat homogenousPt3D;
+    homogenousPt3D.push_back(lastPt3D.at<float>(0,0));
+    homogenousPt3D.push_back(lastPt3D.at<float>(0,1));
+    homogenousPt3D.push_back(lastPt3D.at<float>(0,2));
+    homogenousPt3D.push_back(1.f);
+
+    cv::Mat projected = projectionMatrix * homogenousPt3D;
+    for (size_t col = 0; col < projected.cols; col++) {
+        float s = projected.at<float>(2, col);
+        projected.col(col) = projected.col(col) / s;
+    }
+
+    cv::Mat projected2d = projected.rowRange(0, 2);
+    cv::Mat transposed2D =  lastPt2D.t();
+    double residual = cv::norm(projected2d, transposed2D);
+}
+
 
 int main() {
+
     compute_projection_matrix_LS();
     compute_projection_matrix_SVd();
     compute_camera_center();
+    estimate_residual();
 }
