@@ -20,7 +20,8 @@ To enable an autonomous robot
 
 ## Why another platform?
 
-- To provide an independent implemenation for the public, without having the dependency on any commercial libraries.
+- To provide a vendor independent implemenation for the public.
+- Without the library dependency on any commercial libraries.
 
 
 ## What's the implementation roadmap?
