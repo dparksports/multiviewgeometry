@@ -20,4 +20,11 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules \
     -D BUILD_EXAMPLES=ON ..
 
+export EIGEN3_INCLUDE_DIR=/usr/local/include/eigen3
+export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:/usr/local/share/eigen3/
+
+
+
 ```
+
+
