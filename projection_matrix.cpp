@@ -41,7 +41,7 @@ cv::Mat compute_projection_matrix_SVD(Eigen::MatrixXf pts2d, Eigen::MatrixXf pts
     return projectionMatrixSVD;
 }
 
-cv::Mat compute_projection_matrix_LS(Eigen::MatrixXf pts2d, Eigen::MatrixXf pts3d) {
+cv::Mat compute_projection_matrix_LS(Eigen::MatrixXf &pts2d, Eigen::MatrixXf &pts3d) {
     assert(pts2d.rows() == pts3d.rows() && pts2d.cols() == 2 && pts3d.cols() == 3);
 
     const size_t rows = pts3d.rows() * 2;
@@ -78,24 +78,14 @@ cv::Mat compute_projection_matrix_LS(Eigen::MatrixXf pts2d, Eigen::MatrixXf pts3
 
 void compute_camera_center(cv::Mat projectionMatrix) {
     cv::Mat Q = projectionMatrix.colRange(0, 3);
-    std::cout << "Q:" << Q << endl;
-    std::cout << Q.size()  << endl;
-
     cv::Mat invQ = Q.inv();
-    std::cout << "invQ:" << invQ << endl;
-    std::cout << invQ.size()  << endl;
-
     cv::Mat invQnegative = -1.f * invQ;
-    std::cout << "invQnegative:" << invQnegative << endl;
-
     cv::Mat m4 = projectionMatrix.col(3);
-    std::cout << "m4:" << m4 << endl;
-
     cv::Mat cameraCenter = invQnegative * m4;
     std::cout << "cameraCenter:" << cameraCenter << endl;
 }
 
-void estimate_residual(Eigen::MatrixXf pts2d, Eigen::MatrixXf pts3d, cv::Mat projectionMatrix) {
+void estimate_residual(Eigen::MatrixXf &pts2d, Eigen::MatrixXf &pts3d, cv::Mat projectionMatrix) {
     cv::Mat cv3dpts, cv2dpts;
     cv::eigen2cv(pts3d, cv3dpts);
     cv::eigen2cv(pts2d, cv2dpts);
@@ -118,6 +108,7 @@ void estimate_residual(Eigen::MatrixXf pts2d, Eigen::MatrixXf pts3d, cv::Mat pro
     cv::Mat projected2d = projected.rowRange(0, 2);
     cv::Mat transposed2D =  lastPt2D.t();
     double residual = cv::norm(projected2d, transposed2D);
+    std::cout << "residual:" << residual << endl;
 }
 
 void test_projection_matrix() {
@@ -139,12 +130,12 @@ void test_projection_matrix() {
             0.6077, -0.0771,
             1.2543, -0.6454;
 
-    cv::Mat p_matrix_LS = compute_projection_matrix_LS(pts3d, pts2d);
-    cv::Mat p_matrix_SVD = compute_projection_matrix_SVD(pts3d, pts2d);
+    cv::Mat p_matrix_LS = compute_projection_matrix_LS( pts2d, pts3d);
+    cv::Mat p_matrix_SVD = compute_projection_matrix_SVD(pts2d, pts3d);
     compute_camera_center(p_matrix_LS);
     compute_camera_center(p_matrix_SVD);
-    estimate_residual(pts3d, pts2d, p_matrix_LS);
-    estimate_residual(pts3d, pts2d, p_matrix_SVD);
+    estimate_residual(pts2d, pts3d, p_matrix_LS);
+    estimate_residual(pts2d, pts3d, p_matrix_SVD);
 }
 
 int main() {
